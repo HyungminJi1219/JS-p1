@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    background-image: url("/images/background2.jpeg");
+    background-size: cover;
+}
+
+.container {
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.task-tabs{
+    display: flex;
+    border: 1px solid lightgray;
+    position: relative;
+}
+.task-tabs div {
+    padding: 1em;
+
+}
+.task-area {
+    border: 1px solid lightgray
+}
+#under-line {
+    height: 4px;
+    background-color: pink;
+    position: absolute;
+    width: 60px;
+    left: 0px;
+    top: 55px;
+    padding: 0px;
+    transition: 0.5s
+
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+nav a{
+    text-decoration: line-through;
+    color: black;
+    margin: 2em
+    
+}
+.task-tabs div {
+    cursor: pointer
+}
