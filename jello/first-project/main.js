@@ -1,16 +1,6 @@
-// 유저가 값을 입력한다
-
-// +를 버튼을 클릭하면, 할일이 추가된다
-
-// delete 버튼을 누르면 할일이 삭제된다
-// check 버튼을 누르면 할일이 끝나면서 밑줄이 간다
-// 진행중 끝남 탭을 누르면, 언더바가 이동한다
-// 끝남탭은, 끝난 아이탬만, 진행중 탭은 진행중인 아이탬. 
-// 전체탭을 누르면 다시 전체아이탬으로 돌아옴
 
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
-// 여러가지 가져오기떄문에 QuerySelectorAll <task-table 의 div> 
 let tabs = document.querySelectorAll(".task-tabs div")
 let horizontalUnderLine = document.getElementById("under-line");
 
@@ -28,16 +18,13 @@ let mode = "all"
 addButton.addEventListener("click",addTask);
 
 for (let i = 1; i <tabs.length; i++ ) {
-    //event는 클릭했을때 발생하는 모든 상황에 대해서 알려줌.
     tabs[i].addEventListener("click",function(event) {filter(event)});
 }
 
 function filter(event) {
     console.log("filter click", event.target.id);
-    //클릭한 정확한 컴포넌트가 딱 프린트가 됨.
     mode = event.target.id;
     filterList = []
-    //let filterList = [] <- 지역변수가 아닌 전역변수로 바꿔주자
     if (mode == "all") {
         render();
     }
@@ -101,8 +88,6 @@ function render() {
             </div>`;
         }
         else {
-            // EventListener 말고 onclick 도 있음 (두가지 방식)
-            // single Quotation  <https://flexiple.com/javascript/double-vs-single-quotes-javascript/>
             resultHTML += `<div class = "task">
                 <div> ${list[i].taskContent} </div>
                 <div>
@@ -123,7 +108,6 @@ function deleteTask(id) {
         }
     }
     render()
-    // React 라이버러리.
 }
 function randomIDGenerate() {
     return '_' + Math.random().toString(36).substr(2, 9);
